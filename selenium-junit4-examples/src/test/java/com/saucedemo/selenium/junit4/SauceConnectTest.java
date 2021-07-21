@@ -20,7 +20,7 @@ public class SauceConnectTest extends SauceBaseTest {
     public void shouldOpen() {
         // In order for Sauce to be able to Securely access your application, we use Sauce Connect
         driver.get("http://localhost:3000");
-        if (driver.getTitle() != null) {
+        if (!driver.getTitle().isEmpty()) {
             assertEquals("React App", driver.getTitle());
         }
     }

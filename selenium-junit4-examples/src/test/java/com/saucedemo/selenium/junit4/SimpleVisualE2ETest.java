@@ -49,7 +49,7 @@ public class SimpleVisualE2ETest {
         driver.executeScript("/*@visual.init*/", "My Visual Test 2");
         driver.executeScript("/*@visual.snapshot*/", "Home");
         Map<String, Object> response = (Map<String, Object>) driver.executeScript("/*@visual.end*/");
-        assertNull(response.get("message").toString());
+        assertNull(response.get("message"));
     }
 
     @Test
@@ -100,7 +100,7 @@ public class SimpleVisualE2ETest {
     private void assertNoVisualDifferences() {
         Map<String, Object> response = (Map<String, Object>) driver.executeScript("/*@visual.end*/");
         if(response.get("message") != null){
-            assertNull(response.get("message").toString());
+            assertNull(response.get("message"));
         }
     }
 }
